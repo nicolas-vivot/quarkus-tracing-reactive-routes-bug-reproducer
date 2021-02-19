@@ -29,6 +29,9 @@
 		
 		<lomboc.version>1.18.10</lomboc.version>
 		
+		<opentracing.version>0.32.0</opentracing.version>
+		<lib.datadog-tracer-ot.version>0.74.0</lib.datadog-tracer-ot.version>
+		
 	</properties>
 	
 	<dependencyManagement>
@@ -46,6 +49,30 @@
 	
    	<dependencies>
 			
+		<!-- DataDog is not yet on 0.33.0, force to 0.32.0 -->
+		<dependency>
+			<groupId>io.opentracing</groupId>
+			<artifactId>opentracing-api</artifactId>
+			<version>${opentracing.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.opentracing</groupId>
+			<artifactId>opentracing-util</artifactId>
+			<version>${opentracing.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.datadoghq</groupId>
+		    <artifactId>dd-trace-api</artifactId>
+		    <version>${lib.datadog-tracer-ot.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.datadoghq</groupId>
+		    <artifactId>dd-trace-ot</artifactId>
+		    <version>${lib.datadog-tracer-ot.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

@@ -3,9 +3,11 @@ quarkus:
     name: quarkus-opentracing-bug-reproducer
   log:
     console:
-      format: "%d{HH:mm:ss} %-5p traceId=%X{traceId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{2.}] (%t) %s%e%n"
+      format: "%d{HH:mm:ss} %-5p traceId=%X{dd.trace_id}, spanId=%X{dd.span_id}, sampled=%X{sampled} [%c{2.}] (%t) %s%e%n"
   http:
     io-threads: 2
+  jaeger:
+    enabled: false
 
 mp:
   opentracing:
