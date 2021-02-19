@@ -1,0 +1,13 @@
+quarkus:
+  application:
+    name: quarkus-opentracing-bug-reproducer
+  log:
+    console:
+      format: "%d{HH:mm:ss} %-5p traceId=%X{traceId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{2.}] (%t) %s%e%n"
+  http:
+    io-threads: 2
+
+mp:
+  opentracing:
+    server:
+      operation-name-provider: http-path
